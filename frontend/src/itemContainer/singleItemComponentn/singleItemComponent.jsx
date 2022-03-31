@@ -69,7 +69,7 @@ const SingleItemComponent = (props) => {
     }
     return (
         <div className="index-single-item">
-            <h2>{props.item.productName}</h2>
+            <h2><a href="/items/#">{props.item.productName}</a></h2>
 
             <button onClick={() => {
                 props.deleteItem(props.item._id)
