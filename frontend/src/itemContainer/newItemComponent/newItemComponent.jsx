@@ -175,7 +175,7 @@ const NewItemComponent = (props) => {
                     //else
                     :
                     //button is visible when form not showing and when button is clicked shows form
-                    <button onClick={toggleShowing}>Create new item</button>
+                    <button onClick={toggleShowing}>Create new Bike</button>
             }
 
         </>
