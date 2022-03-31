@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SingleItemComponent from "./singleItemComponentn/singleItemComponent";
 import NewItemComponent from "./newItemComponent/newItemComponent";
+import FrameTypeComponent from "./frameTypeComponent/frameTypeComponent";
 
 const ItemContainer = () => {
     //requestError is a variable in state that setRequestError is the function we use to set that value when we want to update it
@@ -19,7 +20,7 @@ const ItemContainer = () => {
 
 
         //Send a request to our back-end
-        const apiResponse = await fetch("https://my-bike-database-backend.herokuapp.com/items", {
+        const apiResponse = await fetch("http://localhost:3001/items", {
             method: "POST",
             body: JSON.stringify(newItem),
             //need this to POST-- where's this request coming from? What type of Content is it?
@@ -43,7 +44,7 @@ const ItemContainer = () => {
     const deleteItem = async (idToDelete) => {
         //fetch our item ID from the database to delete one
         try {
-            const apiResponse = await fetch(`https://my-bike-database-backend.herokuapp.com/items/${idToDelete}`, {
+            const apiResponse = await fetch(`http://localhost:3001/items/${idToDelete}`, {
                 method: "DELETE"
             })
             const parsedResponse = await apiResponse.json()
@@ -70,7 +71,7 @@ const ItemContainer = () => {
     //function that fetches items from server into our itemContainer
     const getItems = async () => {
         try {
-            const items = await fetch("https://my-bike-database-backend.herokuapp.com/items")
+            const items = await fetch("http://localhost:3001/items")
             const parsedItems = await items.json();
             setItems(parsedItems.data)
         } catch (err) {
@@ -94,7 +95,7 @@ const ItemContainer = () => {
         // }
 
         //calling our API to store our updated item data to the backend
-        const apiResponse = await fetch(`https://my-bike-database-backend.herokuapp.com/items/${idToUpdate}`, {
+        const apiResponse = await fetch(`http://localhost:3001/items/${idToUpdate}`, {
             method: "PUT",
             body: JSON.stringify(itemToUpdate),
             headers: {
@@ -120,6 +121,7 @@ const ItemContainer = () => {
         <div>
             { requestError.length ? <p>{requestError}</p>: null}
             <h2>List of Bicycles</h2>
+            <FrameTypeComponent></FrameTypeComponent>
             <NewItemComponent
                 newItemServerError={newItemServerError}
                 createNewItem={createNewItem}></NewItemComponent>
