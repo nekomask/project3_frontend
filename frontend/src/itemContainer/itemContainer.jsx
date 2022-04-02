@@ -119,9 +119,11 @@ const ItemContainer = () => {
 
     return (
         <div>
+            <section className="top">
             { requestError.length ? <p>{requestError}</p>: null}
             <h2>List of Bicycles</h2>
             <FrameTypeComponent></FrameTypeComponent>
+            </section>
             <NewItemComponent
                 newItemServerError={newItemServerError}
                 createNewItem={createNewItem}></NewItemComponent>

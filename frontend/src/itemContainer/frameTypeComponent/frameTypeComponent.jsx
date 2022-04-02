@@ -14,9 +14,11 @@ const FrameTypeComponent = () => {
         setShowing(!showing)
     }
 
+
+    
 const colorChange = () => {
     let color = document.getElementById('colorInput').value;
-    document.querySelector("#root > div > div > div.frameContainer > img").style.backgroundColor = color;
+    document.querySelector("#frame1").style.backgroundColor = color;
 }
 
 const changeImage = (e) => {
@@ -28,9 +30,11 @@ let URL
 if(bikeType === "bmx") {
     URL="./images/bmx.png"
 }else if(bikeType === "road") {
-    URL="./images/road2.png"
+    URL="./images/road.png"
 }else if(bikeType === "mtb") {
     URL="./images/mtb.png"
+}else if(bikeType === "track") {
+    URL="./images/track.png"
 }
 
 return (
@@ -39,13 +43,13 @@ return (
     <div className="frameContainer">
           <div className="frame">
     
-    <input type="radio" value="bmx" name="frame" label="bmx" onClick={changeImage}/> bmx
+    <input type="radio" value="bmx" name="frame" label="bmx"  onClick={changeImage}/> bmx
 
-    <input type="radio" value="road" name="frame" label="Road"onClick={changeImage}/> Road
+    <input type="radio" value="road" name="frame" label="Road" onClick={changeImage}/> Road
 
-    <input type="radio" value="mtb" name="frame" label="mtb"onClick={changeImage}/> MTB
+    <input type="radio" value="mtb" name="frame" label="mtb" onClick={changeImage}/> MTB
 
-
+    <input type="radio" value="track" name="frame" label="track" onClick={changeImage}/> Track
 
   </div>
 

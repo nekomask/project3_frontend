@@ -1,3 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+
+h1{
+  font-family: 'Train One', cursive;
+}
+
+.form{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+
+
+div#new-item-form{
+  display: flex;
+}
+
+div.frame_and_fork {
+  display: flex;
+  flex-direction: column;
+}
+
+div.headset{
+  display: flex;
+  flex-direction: column;
+}
+
+div.bottom-row{
+  display: flex;
+}
+
+div.seat{
+  display: flex;
+  flex-direction: column;
+}
+
+div.crankset{
+  display: flex;
+  flex-direction: column;
+}
+
+div.wheels{
+  display: flex;
+  flex-direction: column;
+}
+
+li{
+  list-style-type: none;
+}
+
+
+img#frame1{
+  border: 20px;
+  border-color: white;
+  border-radius: 30px;
+}
+
 img.bmx{
   background-color: aqua;
 }

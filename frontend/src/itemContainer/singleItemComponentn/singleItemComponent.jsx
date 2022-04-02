@@ -69,7 +69,7 @@ const SingleItemComponent = (props) => {
     }
     return (
         <div className="index-single-item">
-            <h2><a href="/items/#">{props.item.productName}</a></h2>
+            <h2><a href={`/items/${props.item._id}`}>{props.item.productName}</a></h2>
 
             <button onClick={() => {
                 props.deleteItem(props.item._id)
@@ -81,9 +81,11 @@ const SingleItemComponent = (props) => {
                         <form onSubmit={submitUpdateItem}>
                             {isValidState.valid ? null : <p className="form-error">{isValidState.message}</p>}
                             {props.newItemServerError ? <p className="form-error">{props.newItemServerError}</p> : null}
+
                             Bike Name: <input onChange={handleInputChange} type="text" name="productName" value={updateItem.productName} /><br />
                             Frame Type: <input onChange={handleInputChange} type="text" name="frameType" value={updateItem.frameType || ""} /><br />
                             Frame Height: <input onChange={handleInputChange} type="text" name="frameHeight" value={updateItem.frameHeight || ""} /><br />
+                            <h2>Headset and Fork</h2>
                             Headset Size: <input onChange={handleInputChange} type="text" name="headsetSize" value={updateItem.headsetSize || ""} /><br />
                             Headset Type: <input onChange={handleInputChange} type="text" name="headsetType" value={updateItem.headsetType || ""} /><br />
                             Stem Length: <input onChange={handleInputChange} type="number" name="stemLength" value={updateItem.stemLength || ""} />mm<br />
@@ -92,6 +94,8 @@ const SingleItemComponent = (props) => {
                             Stem Clamp Size: <input onChange={handleInputChange} type="text" name="stemClampSize" value={updateItem.stemClampSize || ""} /><br />
                             Stem Rise angle: <input onChange={handleInputChange} type="number" name="stemAngle" value={updateItem.stemAngle || ""} />°<br />
                             Handlebar Type: <input onChange={handleInputChange} type="text" name="handlebarType" value={updateItem.handlebarType || ""} /><br />
+                            Brake Lever Type: <input onChange={handleInputChange} type="text" name="brakeType" value={updateItem.brakeType || ""} /><br />
+<h2>Seatpost {"&"} Saddle</h2>
                             Seatpost Manufacturer: <input onChange={handleInputChange} type="text" name="seatPostBrand" value={updateItem.seatPostBrand || ""} /><br />
                             Seatpost Diameter: <input onChange={handleInputChange} type="number" name="seatPostDiameter" value={updateItem.seatPostDiameter || ""} />mm<br />
                             Saddle Brand: <input onChange={handleInputChange} type="text" name="saddleBrand" value={updateItem.saddleBrand || ""} /><br />
@@ -122,7 +126,7 @@ const SingleItemComponent = (props) => {
                         </form>
                     </div>
                     :
-                    <button onClick={toggleShowing}>Edit this item</button>
+                    <button onClick={toggleShowing}>Edit this bike</button>
             }
             <>
             </>
