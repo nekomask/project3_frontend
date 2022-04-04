@@ -2,8 +2,7 @@ import './App.css';
 import ItemContainer from './itemContainer/itemContainer';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Pages/Home"
-import Create from "./Pages/Create"
-import Show from "./Pages/Show"
+import About from "./Pages/About"
 
 function App() {
   return (

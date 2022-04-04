@@ -85,11 +85,11 @@ const SingleItemComponent = (props) => {
                         <form onSubmit={submitUpdateItem}>
                             {isValidState.valid ? null : <p className="form-error">{isValidState.message}</p>}
                             {props.newItemServerError ? <p className="form-error">{props.newItemServerError}</p> : null}
-
+<h2>Frame and Fork</h2>
                             Bike Name: <input onChange={handleInputChange} type="text" name="productName" value={updateItem.productName} /><br />
                             Frame Type: <input onChange={handleInputChange} type="text" name="frameType" value={updateItem.frameType || ""} /><br />
                             Frame Height: <input onChange={handleInputChange} type="text" name="frameHeight" value={updateItem.frameHeight || ""} /><br />
-                            <h2>Headset and Fork</h2>
+                            <h2>Headset</h2>
                             Headset Size: <input onChange={handleInputChange} type="text" name="headsetSize" value={updateItem.headsetSize || ""} /><br />
                             Headset Type: <input onChange={handleInputChange} type="text" name="headsetType" value={updateItem.headsetType || ""} /><br />
                             Stem Length: <input onChange={handleInputChange} type="number" name="stemLength" value={updateItem.stemLength || ""} />mm<br />

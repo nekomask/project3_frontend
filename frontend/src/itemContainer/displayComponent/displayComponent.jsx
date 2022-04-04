@@ -1,8 +1,10 @@
 import './App.css';
 import ItemContainer from './itemContainer/itemContainer';
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-function App() {
+export function DisplayComponent() {
+  let {id} = useParams();
+  let index = props.item
   return (
     <div className="show">
 
@@ -11,4 +13,4 @@ function App() {
   );
 }
 
-export default App;
+export default DisplayComponent;
