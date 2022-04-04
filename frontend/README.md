@@ -19,7 +19,7 @@ This full CRUD application is powered mainly by React, Express, and MongoDB in s
 
 There is a backend using express that manages the controller routes and the schema while the frontend uses React to give users a unique experience.
 
-I also used a little JQuery and DOM manipulation on the splash page that allows users to change the (background) color of different bicycle frames.
+Aside from Adobe Photoshop, I also used a little JQuery and DOM manipulation on the splash page that allows users to change the (background) color of different bicycle frames.
 
 
 # Notes
