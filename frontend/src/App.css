@@ -18,6 +18,16 @@ aside.create{
   background-repeat: no-repeat;
 }
 
+a#enter{
+  font-size: 20px;
+  border-width: 20px;
+  padding: 8px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  background-color: green;
+}
+
 h2#create{
   margin: 20px;
   color: white;

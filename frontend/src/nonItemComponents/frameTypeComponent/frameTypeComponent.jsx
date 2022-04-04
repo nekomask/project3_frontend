@@ -65,7 +65,7 @@ return (
         <h5>As you get started, you may feel overwhelmed by all the information you don't know. That's okay!
             It's a work in progress!
         </h5>
-        <a href="/create">Click here to get started!</a>
+        <a id="enter" href="/create">ENTER</a>
     </div>
 
 )
