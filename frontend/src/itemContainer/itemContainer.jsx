@@ -20,7 +20,7 @@ const ItemContainer = () => {
 
 
         //Send a request to our back-end
-        const apiResponse = await fetch("https://my-bike-database-backend.herokuapp.com/", {
+        const apiResponse = await fetch("https://my-bike-database-backend.herokuapp.com/items", {
             method: "POST",
             body: JSON.stringify(newItem),
             //need this to POST-- where's this request coming from? What type of Content is it?
