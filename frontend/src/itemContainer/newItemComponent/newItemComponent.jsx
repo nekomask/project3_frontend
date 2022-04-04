@@ -134,85 +134,89 @@ const NewItemComponent = (props) => {
                     <div id="new-item-form">
 
                         <form onSubmit={submitNewItem}>
-                            <button onClick={toggleShowing}>Close</button>
+                            <button id="close" onClick={toggleShowing}>Close</button><br />
+                            
                             {isValidState.valid ? null : <p className="form-error">{isValidState.message}</p>}
                             {props.newItemServerError ? <p className="form-error">{props.newItemServerError}</p> : null}
                             <div className="form">
                             <div className="frame_and_fork">
                                 <h2>Frame and Fork</h2>
                                 <ul className="frame_and_fork">
-                                    <li>Name: <input onChange={handleInputChange} type="text" name="productName" placeholder="Name for your bike" value={newItem.productName || ""} /></li><br />
-                                    <li>Frame Type: <input onChange={handleInputChange} type="text" name="frameType" placeholder="Mountain, Road, ect." value={newItem.frameType || ""} /></li><br />
-                                    <li>Frame Height: <input onChange={handleInputChange} type="text" name="frameHeight" value={newItem.frameHeight || ""} /></li><br />
-                                    <li>Fork Brand: <input onChange={handleInputChange} type="string" name="forkBrand" value={newItem.forkBrand || ""} /></li><br />
-                                    <li>Fork Type: <input onChange={handleInputChange} type="text" name="forkType" placeholder="Suspension, Rigid, ect." value={newItem.forkType || ""} /></li><br />
-                                    <li> <img src="./images/icons/question_icon.png" /> Forkend Dropout Spacing: <input onChange={handleInputChange} type="number" name="forkEndSpacing" placeholder="100mm, 110mm, ect." value={newItem.forkEndSpacing} />mm</li><br />
-                                    <li>Headtube Length: <input onChange={handleInputChange} type="text" name="headTubeLength" value={newItem.headTubeLength || ""} /></li><br />
-                                    <li>Rear Dropout Spacing: <input onChange={handleInputChange} type="number" name="dropoutSpacing" placeholder="110mm, 114mm, 120mm, ect." value={newItem.dropoutSpacing} />mm</li><br />
+                                    <li>Name: <input onChange={handleInputChange} type="text" name="productName" placeholder="Name for your bike" value={newItem.productName || ""} /></li><hr /><br />
+                                    <li>Frame Type: <input onChange={handleInputChange} type="text" name="frameType" placeholder="Mountain, Road, ect." value={newItem.frameType || ""} /></li><hr /><br />
+                                    <li>Frame Height: <input onChange={handleInputChange} type="text" name="frameHeight" value={newItem.frameHeight || ""} /></li><hr /><br />
+                                    <li>Fork Brand: <input onChange={handleInputChange} type="string" name="forkBrand" value={newItem.forkBrand || ""} /></li><hr /><br />
+                                    <li><a href="https://hub.chainreactioncycles.com/buying-guides/frames-and-forks/forks-buying-guide/" target="_blank"><img src="./images/icons/question_icon.png"/></a> Fork Type: <input onChange={handleInputChange} type="text" name="forkType" placeholder="Suspension, Rigid, ect." value={newItem.forkType || ""} /></li><hr /><br />
+                                    <li><a href="https://www.sheldonbrown.com/rinard/forklengths.htm" target="_blank"><img src="./images/icons/question_icon.png"/></a> Fork Length: <input onChange={handleInputChange} type="text" name="forkType" placeholder="Suspension, Rigid, ect." value={newItem.forkType || ""} /></li><hr /><br />
+                                    <li> <a href="https://www.sheldonbrown.com/frame-spacing.html" target="_blank"><img src="./images/icons/question_icon.png"/></a> Forkend Dropout Spacing: <input onChange={handleInputChange} type="number" name="forkEndSpacing" placeholder="100mm, 110mm, ect." value={newItem.forkEndSpacing} />mm</li><hr /><br />
+                                    <li> <a href="https://canecreek.com/everything-you-need-to-know-about-headsets/" target="_blank"><img src="./images/icons/question_icon.png"/></a> Headtube Type: <input onChange={handleInputChange} type="number" name="forkEndSpacing" placeholder="100mm, 110mm, ect." value={newItem.forkEndSpacing} />mm</li><hr /><br />
+                                    <li>Headtube Length: <input onChange={handleInputChange} type="text" name="headTubeLength" value={newItem.headTubeLength || ""} /></li><hr /><br />
+                                    <li>Rear Dropout Spacing: <input onChange={handleInputChange} type="number" name="dropoutSpacing" placeholder="110mm, 114mm, 120mm, ect." value={newItem.dropoutSpacing} />mm</li><hr /><br />
                                 </ul>
                             </div>
                             <div className="headset">
                                 <h2 className="headset">Headset and Brakes</h2>
-                                <ul className="headset">
-                                    <li>Headset Size: <input onChange={handleInputChange} type="text" name="headsetSize" value={newItem.headsetSize || ""} /></li><br />
-                                    <li>Headset Type: <input onChange={handleInputChange} type="text" name="headsetType" placeholder="Threaded, threadless, integrated, ect." value={newItem.headsetType || ""} /></li><br />
-                                    <li>Stem Length: <input onChange={handleInputChange} type="number" name="stemLength" value={newItem.stemLength || ""} />mm</li><br />
-                                    <li>Stem Clamp Size: <input onChange={handleInputChange} type="text" name="stemClampSize" value={newItem.stemClampSize || ""} /></li><br />
-                                    <li>Stem Rise angle: <input onChange={handleInputChange} type="number" name="stemAngle" value={newItem.stemAngle || ""} />°</li><br />
-                                    <li>Handlebar Type: <input onChange={handleInputChange} type="text" name="handlebarType" placeholder="Drop, Aero, Flat, ect." value={newItem.handlebarType || ""} /></li><br />
-                                    <li>Brake Lever Type: <input onChange={handleInputChange} type="text" name="brakeType" placeholder="Standard Pull, Long Pull, ect." value={newItem.brakeType || ""} /></li><br />
-                                    <li>Front Brake Type: <input onChange={handleInputChange} type="text" name="frontBrakeBrand" placeholder="Cantilever, Caliper, ect." value={newItem.frontBrakeBrand || ""} /></li><br />
-                                    <li>Rear Brake Type: <input onChange={handleInputChange} type="text" name="rearBrakeBrand" placeholder="Cantilever, Caliper, ect." value={newItem.rearBrakeBrand || ""} /></li><br />
-                                </ul>
-                            </div>
-                            </div>
-                            <div className="bottom-row">
-                            <div className="seat">
-                                <h2 className="seat">Seatpost {"&"} Saddle</h2>
-                                <ul className="seat">
-                                    <li>Seatpost Manufacturer: <input onChange={handleInputChange} type="text" name="seatPostBrand" value={newItem.seatPostBrand || ""} /></li><br />
-                                    <li>Seatpost Diameter: <input onChange={handleInputChange} type="number" name="seatPostDiameter" value={newItem.seatPostDiameter || ""} />mm</li><br />
-                                    <li>Saddle Brand: <input onChange={handleInputChange} type="text" name="saddleBrand" value={newItem.saddleBrand || ""} /></li><br />
-                                </ul>
-                            </div>
-                            <div className="crankset">
-                                <h2 className="crankset">Crankset {"&"} Bottom Bracket</h2>
-                                <ul className="crankset">
-                                    <li>Chainring Teeth #: <input onChange={handleInputChange} type="text" name="chainRingTeeth" value={newItem.chainRingTeeth || ""} /></li><br />
-                                    <li>Bolt Circle Diameter: <input onChange={handleInputChange} type="number" name="chainRingBCD" value={newItem.chainRingBCD || ""} />mm</li><br />
-                                    <li>Bottom Bracket Type: <input onChange={handleInputChange} type="text" name="bottomBracketType" placeholder="Cartridge, External, Press-Fit, ect." value={newItem.bottomBracketType || ""} /></li><br />
-                                    <li>Bottom Bracket Shell Width: <input onChange={handleInputChange} type="number" name="bottomBracketSize" value={newItem.bottomBracketSize || ""} />mm</li><br />
-                                    <li>Crank Arms Length: <input onChange={handleInputChange} type="number" name="crankArmLength" value={newItem.crankArmLength || ""} />mm</li><br />
+                                <ul className="headset-class">
+                                    <li id="headset-size">Headset Size: <input onChange={handleInputChange} type="text" name="headsetSize" value={newItem.headsetSize || ""} /></li><hr /><br />
+                                    <li id="headset-type">Headset Type: <input onChange={handleInputChange} type="text" name="headsetType" placeholder="Threaded, threadless, integrated, ect." value={newItem.headsetType || ""} /></li><hr /><br />
+                                    <li id="stem-length">Stem Length: <input onChange={handleInputChange} type="number" name="stemLength" value={newItem.stemLength || ""} />mm</li><hr /><br />
+                                    <li id="stem-clamp">Stem Clamp Size: <input onChange={handleInputChange} type="text" name="stemClampSize" value={newItem.stemClampSize || ""} /></li><hr /><br />
+                                    <li id="stem-rise"><a href="https://www.google.com/search?q=stem+rise" target="_blank"><img src="./images/icons/question_icon.png"/></a> Stem Rise angle: <input onChange={handleInputChange} type="number" name="stemAngle" value={newItem.stemAngle || ""} />°</li><hr /><br />
+                                    <li id="handlebar-type">Handlebar Type: <input onChange={handleInputChange} type="text" name="handlebarType" placeholder="Drop, Aero, Flat, ect." value={newItem.handlebarType || ""} /></li><hr /><br />
+                                    <li id="brake-lever">Brake Lever Type: <input onChange={handleInputChange} type="text" name="brakeType" placeholder="Standard Pull, Long Pull, ect." value={newItem.brakeType || ""} /></li><hr /><br />
+                                    <li id="front-brake">Front Brake Type: <input onChange={handleInputChange} type="text" name="frontBrakeBrand" placeholder="Cantilever, Caliper, ect." value={newItem.frontBrakeBrand || ""} /></li><hr /><br />
+                                    <li id="rear-brake">Rear Brake Type: <input onChange={handleInputChange} type="text" name="rearBrakeBrand" placeholder="Cantilever, Caliper, ect." value={newItem.rearBrakeBrand || ""} /></li><hr /><br />
                                 </ul>
                             </div>
                             <div className="wheels">
                                 <h2 className="wheels">Wheels</h2>
                                 <ul className="wheels">
-                                    <li>Rims Size: <input onChange={handleInputChange} type="text" name="rimSize" placeholder='26", 700cc, ect' value={newItem.rimSize || ""} /></li><br />
-                                    <li># Spoke Holes Front Wheel: <input onChange={handleInputChange} type="number" name="hubSpokeCountFront" placeholder="20, 24, 28, 32, ect." value={newItem.hubSpokeCountFront || ""} /></li><br />
-                                    <li># Spoke Holes Rear Wheel: <input onChange={handleInputChange} type="number" name="hubSpokeCountRear" placeholder="20, 24, 28, 32, ect." value={newItem.hubSpokeCountRear || ""} /></li><br />
-                                    <li>Tire Width: <input onChange={handleInputChange} type="number" name="tireSize" placeholder='1.5", 1.75", 2.0", ect.' value={newItem.tireSize || ""} />"</li><br />
-                                    <li>Hub Type Front: <input onChange={handleInputChange} type="text" name="hubTypeFront" value={newItem.hubTypeFront} /></li><br />
-                                    <li>Hub Type Rear: <input onChange={handleInputChange} type="text" name="hubTypeRear" value={newItem.hubTypeRear} /></li><br />
-                                    <li>Front Hub Length: <input onChange={handleInputChange} type="number" name="hubLengthFront" placeholder="100mm, 110mm, ect." value={newItem.hubLengthFront} />mm</li><br />
-                                    <li>Rear Hub Length: <input onChange={handleInputChange} type="number" name="hubLengthRear" placeholder="110mm, 114mm, 120mm, ect." value={newItem.hubLengthRear} />mm</li><br />
-                                    <li>Front Hub # of Spokes: <input onChange={handleInputChange} type="number" name="hubSpokeCountFront" placeholder="20, 24, 28, 32, ect." value={newItem.hubSpokeCountFront || ""} /></li><br />
-                                    <li>Rear Hub # of Spokes: <input onChange={handleInputChange} type="number" name="hubSpokeCountRear" placeholder="20, 24, 28, 32, ect." value={newItem.hubSpokeCountRear || ""} /></li><br />
-                                    <li> Front Wheel Spoke Length: <input onChange={handleInputChange} type="number" name="spokeLengthFront" value={newItem.spokeLengthFront || ""} />mm</li><br />
-                                    <li>Rear Wheel Spoke Length: <input onChange={handleInputChange} type="number" name="spokeLengthRear" value={newItem.spokeLengthRear || ""} />mm</li><br />
+                                    <li>Rims Size: <input onChange={handleInputChange} type="text" name="rimSize" placeholder='26", 700cc, ect' value={newItem.rimSize || ""} /></li><hr /><br />
+                                    <li># Spoke Holes Front Wheel: <input onChange={handleInputChange} type="number" name="hubSpokeCountFront" placeholder="20, 24, 28, 32, ect." value={newItem.hubSpokeCountFront || ""} /></li><hr /><br />
+                                    <li># Spoke Holes Rear Wheel: <input onChange={handleInputChange} type="number" name="hubSpokeCountRear" placeholder="20, 24, 28, 32, ect." value={newItem.hubSpokeCountRear || ""} /></li><hr /><br />
+                                    <li>Tire Width: <input onChange={handleInputChange} type="number" name="tireSize" placeholder='1.5", 1.75", 2.0", ect.' value={newItem.tireSize || ""} />"</li><hr /><br />
+                                    <li>Hub Type Front: <input onChange={handleInputChange} type="text" name="hubTypeFront" value={newItem.hubTypeFront} /></li><hr /><br />
+                                    <li>Hub Type Rear: <input onChange={handleInputChange} type="text" name="hubTypeRear" value={newItem.hubTypeRear} /></li><hr /><br />
+                                    <li>Front Hub Length: <input onChange={handleInputChange} type="number" name="hubLengthFront" placeholder="100mm, 110mm, ect." value={newItem.hubLengthFront} />mm</li><hr /><br />
+                                    <li>Rear Hub Length: <input onChange={handleInputChange} type="number" name="hubLengthRear" placeholder="110mm, 114mm, 120mm, ect." value={newItem.hubLengthRear} />mm</li><hr /><br />
+                                    <li>Front Hub # of Spokes: <input onChange={handleInputChange} type="number" name="hubSpokeCountFront" placeholder="20, 24, 28, 32, ect." value={newItem.hubSpokeCountFront || ""} /></li><hr /><br />
+                                    <li>Rear Hub # of Spokes: <input onChange={handleInputChange} type="number" name="hubSpokeCountRear" placeholder="20, 24, 28, 32, ect." value={newItem.hubSpokeCountRear || ""} /></li><hr /><br />
+                                    <li> Front Wheel Spoke Length: <input onChange={handleInputChange} type="number" name="spokeLengthFront" value={newItem.spokeLengthFront || ""} />mm</li><hr /><br />
+                                    <li>Rear Wheel Spoke Length: <input onChange={handleInputChange} type="number" name="spokeLengthRear" value={newItem.spokeLengthRear || ""} />mm</li><hr /><br />
                                 </ul>
                                 </div>
-                            
                             </div>
+                          
+                            <div className="seat">
+                                <h2 className="seat">Seatpost {"&"} Saddle</h2>
+                                <ul className="seat">
+                                    <li>Seatpost Manufacturer: <input onChange={handleInputChange} type="text" name="seatPostBrand" value={newItem.seatPostBrand || ""} /></li><hr /><br />
+                                    <li>Seatpost Diameter: <input onChange={handleInputChange} type="number" name="seatPostDiameter" value={newItem.seatPostDiameter || ""} />mm</li><hr /><br />
+                                    <li>Saddle Brand: <input onChange={handleInputChange} type="text" name="saddleBrand" value={newItem.saddleBrand || ""} /></li><hr /><br />
+                                </ul>
+                            </div>
+                            <div className="crankset">
+                                <h2 className="crankset">Crankset {"&"} Bottom Bracket</h2>
+                                <ul className="crankset">
+                                    <li>Chainring Teeth #: <input onChange={handleInputChange} type="text" name="chainRingTeeth" value={newItem.chainRingTeeth || ""} /></li><hr /><br />
+                                    <li>Bolt Circle Diameter: <input onChange={handleInputChange} type="number" name="chainRingBCD" value={newItem.chainRingBCD || ""} />mm</li><hr /><br />
+                                    <li>Bottom Bracket Type: <input onChange={handleInputChange} type="text" name="bottomBracketType" placeholder="Cartridge, External, Press-Fit, ect." value={newItem.bottomBracketType || ""} /></li><hr /><br />
+                                    <li>Bottom Bracket Shell Width: <input onChange={handleInputChange} type="number" name="bottomBracketSize" value={newItem.bottomBracketSize || ""} />mm</li><hr /><br />
+                                    <li>Crank Arms Length: <input onChange={handleInputChange} type="number" name="crankArmLength" value={newItem.crankArmLength || ""} />mm</li><hr /><br />
+                                </ul>
+                            </div>
+
+                            
+                           
                             <br />
-                            <button type="submit">Submit</button>
+                            <button id="submit" type="submit">Submit</button>
                             <hr></hr>
                         </form>
                     </div>
                     //else
                     :
                     //button is visible when form not showing and when button is clicked shows form
-                    <button onClick={toggleShowing}>Create new Bike</button>
+                    <button id="create" onClick={toggleShowing}>Create new Bike</button>
             }
 
         </>

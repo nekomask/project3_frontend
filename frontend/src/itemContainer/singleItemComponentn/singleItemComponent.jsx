@@ -17,6 +17,9 @@ const SingleItemComponent = (props) => {
         frameHeight: props.item.frameHeight,
         forkBrand: props.item.forkBrand,
         forkType: props.item.forkType,
+        forkLength: props.item.forkLength,
+        headTubeType: props.item.headTubeType,
+        headTubeLength: props.item.headTubeLength,
         headsetSize: props.item.headsetSize,
         headsetType: props.item.headsetType,
         stemLength: props.item.stemLength,
@@ -72,8 +75,9 @@ const SingleItemComponent = (props) => {
             <h2><a href={`/items/${props.item._id}`}>{props.item.productName}</a></h2>
 
             <button onClick={() => {
-                props.deleteItem(props.item._id)
-            }}>Delete</button>
+                if (window.confirm('Delete selected item?')){
+     return props.deleteItem(props.item._id)
+            }}}>Delete</button>
             {
                 showing ?
                     <div id="edit-item-form">
@@ -95,7 +99,7 @@ const SingleItemComponent = (props) => {
                             Stem Rise angle: <input onChange={handleInputChange} type="number" name="stemAngle" value={updateItem.stemAngle || ""} />°<br />
                             Handlebar Type: <input onChange={handleInputChange} type="text" name="handlebarType" value={updateItem.handlebarType || ""} /><br />
                             Brake Lever Type: <input onChange={handleInputChange} type="text" name="brakeType" value={updateItem.brakeType || ""} /><br />
-<h2>Seatpost {"&"} Saddle</h2>
+<h2 id="seat">Seatpost {"&"} Saddle</h2>
                             Seatpost Manufacturer: <input onChange={handleInputChange} type="text" name="seatPostBrand" value={updateItem.seatPostBrand || ""} /><br />
                             Seatpost Diameter: <input onChange={handleInputChange} type="number" name="seatPostDiameter" value={updateItem.seatPostDiameter || ""} />mm<br />
                             Saddle Brand: <input onChange={handleInputChange} type="text" name="saddleBrand" value={updateItem.saddleBrand || ""} /><br />
@@ -122,7 +126,7 @@ const SingleItemComponent = (props) => {
                             Rear Wheel Spoke Length: <input onChange={handleInputChange} type="number" name="spokeLengthRear" value={updateItem.spokeLengthRear || ""} />mm<br />
 
                             <br></br>
-                            <button type="submit">Submit</button>
+                            <button id="submit" type="submit">Submit</button>
                         </form>
                     </div>
                     :

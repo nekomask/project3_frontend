@@ -1,15 +1,92 @@
 @import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
 
+a { 
+  text-decoration: none;
+ }
+
+a:visited { 
+  text-decoration: none;
+ }
+
+div#edit-item-form {
+  margin-left: 20px;
+}
+
+aside.create{
+  background-image: url("../public/images/wallpaper/workshop.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+h2#create{
+  margin: 20px;
+  color: white;
+}
+
+section.nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+a#about{
+  font-size: 15px;
+  margin-right: 15px;
+}
+
 h1{
   font-family: 'Train One', cursive;
+  text-decoration: none;
 }
 
 .form{
+  margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content:center;
+  align-items: stretch;
+  gap: 70px;
+  margin-left: 30px;
+
 }
 
+button#create{
+  margin-left: 20px;
+  font-size: 20px;
+  padding: 15px 32;
+  text-decoration: none;
+  color: white;
+  background-color: green;
+}
+
+button#create:hover{
+  transition-duration: 0.4s;
+  margin-left: 20px;
+  font-size: 20px;
+  padding: 15px 32;
+  text-decoration: none;
+  color: green;
+  background-color: white;
+}
+
+button#submit {
+  margin-left: 20px;
+  font-size: 20px;
+  padding: 15px 32;
+  text-decoration: none;
+  color: white;
+  background-color: green;
+}
+
+button#close {
+  margin-left: 20px;
+  font-size: 20px;
+  padding: 15px 32;
+  text-decoration: none;
+  color: white;
+  background-color: red;
+}
 
 div#new-item-form{
   display: flex;
@@ -18,11 +95,35 @@ div#new-item-form{
 div.frame_and_fork {
   display: flex;
   flex-direction: column;
+  border-color: rgb(0, 0, 0);
+  border-width: 4px;
+  border-style: solid;
+  align-items: center;
+  background-color: beige;
+}
+
+ul.frame_and_fork{
+  background-color:rgb(255, 255, 182);
+  border-color: rgb(0, 0, 0);
+  border-width: 1px;
+  border-style: solid;
 }
 
 div.headset{
   display: flex;
   flex-direction: column;
+  border-color: rgb(0, 0, 0);
+  border-width: 4px;
+  border-style: solid;
+  align-items: center;
+  background-color: beige;
+}
+
+ul.headset-class{
+  background-color:rgb(255, 255, 182);
+  border-color: rgb(0, 0, 0);
+  border-width: 1px;
+  border-style: solid;
 }
 
 div.bottom-row{
@@ -31,21 +132,66 @@ div.bottom-row{
 
 div.seat{
   display: flex;
+  border-color: rgb(0, 0, 0);
+  border-width: 4px;
+  border-style: solid;
+  background-color: beige;
   flex-direction: column;
+  align-items: stretch;
+  flex-wrap: nowrap;
 }
+
+ul.seat{
+  background-color:rgb(255, 255, 182);
+  border-color: rgb(0, 0, 0);
+  border-width: 1px;
+  border-style: solid;
+}
+
+h2.seat {
+  margin-left: 40%;
+}
+
 
 div.crankset{
   display: flex;
+  border-color: rgb(0, 0, 0);
+  border-width: 4px;
+  border-style: solid;
+  background-color: beige;
   flex-direction: column;
+  align-items: stretch;
+  flex-wrap: nowrap;
 }
+
+ul.crankset{
+  background-color:rgb(255, 255, 182);
+  border-color: rgb(0, 0, 0);
+  border-width: 1px;
+  border-style: solid;
+}
+
 
 div.wheels{
   display: flex;
   flex-direction: column;
+  border-color: rgb(0, 0, 0);
+  border-width: 4px;
+  border-style: solid;
+  align-items: center;
+  background-color: beige;
+}
+
+ul.wheels{
+  background-color:rgb(255, 255, 182);
+  border-color: rgb(0, 0, 0);
+  border-width: 1px;
+  border-style: solid;
 }
 
 li{
   list-style-type: none;
+  font-weight: 500; 
 }
 
 

@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# project3_frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+My project "My Bike Database" is an application for storing component data for users bicycles.
 
-## Available Scripts
+# Background
+The idea comes from my own personal history of putting together and repairing my own bicycles over the years.
 
-In the project directory, you can run:
+One might think that bicycles have been around long enough for all parts to have become standardized, interchangeable, and one-size fits all.
 
-### `npm start`
+While some parts can be interchangeable depending on compatability, one size certainly doesn't fit all (except for maybe an accessory like a bike light).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I personally wanted to make an application like this to help me remember my own schematics for my different bicycles because you wouldn't think it- but it can be a real pain to measure something like even a spoke if you happen to need a replacement. But you can't even order one until you're sure what exact size you need. Who wants to do that? 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+With this application, you can store your bike data and update it over time, sparing yourself wasted hours of disassembling your headset or accidentally ordering the wrong component.
 
-### `npm test`
+# Technologies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This full CRUD application is powered mainly by React, Express, and MongoDB in storing form data objects to a server and fetching that API data to be updated or deleted.
 
-### `npm run build`
+There is a backend using express that manages the controller routes and the schema while the frontend uses React to give users a unique experience.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I also used a little JQuery and DOM manipulation on the splash page that allows users to change the (background) color of different bicycle frames.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Notes
+Because I think making a glorified spreadsheet of very detailed bike component specifications can be an incredibly dry subject (even for myself who actually finds it relevant), I wanted to implement something fun and interactive for people who aren't autistic about their bikes-- that's why I came up with the splash page where people can cycle through some different bike frames and see how they look in different colors. That actually turned out to be the most rewarding part of this project to me. It would be cool in the future to save the state of this image's color/frametype and have it be a part of each individual bike's show page. 
 
-### `npm run eject`
+There are also some icons in the create-form that link to some helpful resources for normal people who don't know what all that bike jargon means. I do plan to add more icons with links in the future as well.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+While the MVP was reached, this application is still very much a work in progress. Two big features that I'm hoping to add next would be rendering a show page for created objects (a user's bike). Then once I have that functionality in place, I would move on to letting users create accounts and login. I had some trouble figuring out how to get Router React dom map for item._id-- I know it has to involve hooks and props but just couldn't get there in time. I also plan to rehaul the style of the create page-- I waited to work on style last because I just wanted to focus on functionality for this project and managing all the object properties.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I also hate to say it but there's still so many properties to be added. I can already tell that I will eventually have a hard time drawing the line on what becomes too impractical and minute to include in the list as it's not really my intention to include every minute detail on a bike-- but mostly just things require specific compatability and a person wouldn't want to measure more than once.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Links
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Heroku backend: https://my-bike-database-backend.herokuapp.com/
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Heroku frontend: https://my-bike-database-frontend.herokuapp.com/
